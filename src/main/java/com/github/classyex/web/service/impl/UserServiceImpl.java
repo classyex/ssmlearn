@@ -34,26 +34,17 @@ public class UserServiceImpl implements UserService {
             throw new UserCanNotBeNullException("User can not be Null");
         }
         //用户名不能为空检查
-        if (StringUtils.isEmpty(user.getLoginId())) {
+        if (StringUtils.isEmpty(user.getId())) {
             //抛出用户名为空的自定义异常
             throw new UserNameCanNotBeNullException("User name can not be Null");
         }
         //用户密码不能为空检查
-        if (StringUtils.isEmpty(user.getPwd())) {
+        if (StringUtils.isEmpty(user.getPassword())) {
             //抛出用户密码为空的自定义异常
             throw new UserPwdCanNotBeNullException("User name can not be Null");
         }
-        //由于我这个是仓库管理系统，根据业务需求来说，我们的用户基本信息都是不能为空的
-        //基本信息包括：姓名、年龄、用户名、密码、性别、手机号，年龄大于18
-        if (StringUtils.isEmpty(user.getDuty())
-                || StringUtils.isEmpty(user.getSex())
-                || user.getAge() > 18
-                || StringUtils.isEmpty(user.getCellNumber())) {
-            //其他综合异常
-            throw new OtherThingsException("Some use's base info can not be null");
-        }
         //已经存在相同用户
-        if (null != userDao.findOneById(user.getLoginId())) {
+        if (null != userDao.findOneById(user.getId())) {
             //存在相同的用户异常
             throw new UserAireadyExistException("Register User Failed，Because the  user Aiready exist");
         }

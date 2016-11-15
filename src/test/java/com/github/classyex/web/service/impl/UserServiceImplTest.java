@@ -3,6 +3,7 @@ package com.github.classyex.web.service.impl;
 import com.github.classyex.web.dao.BaseTest;
 import com.github.classyex.web.domain.User;
 import com.github.classyex.web.exception.*;
+import com.github.classyex.web.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class UserServiceImplTest extends BaseTest {
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Test
     public void add() throws Exception {

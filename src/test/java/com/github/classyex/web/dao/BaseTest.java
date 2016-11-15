@@ -1,5 +1,6 @@
 package com.github.classyex.web.dao;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,4 +15,9 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class) //spring的单元测试
 @ContextConfiguration({"classpath:spring/spring-*.xml"})
 public class BaseTest {
+
+    @Test
+    public void baseTest() throws Exception {
+
+    }
 }

@@ -48,7 +48,7 @@ public class UserController {
             mav.addObject("message", "用户信息不能为空！");  //加入提示信息，在jsp中我们直接使用${对象名称}就能获取对应的内容
             return mav; //返回页面
         }
-        if (StringUtils.isEmpty(user.getName()) || StringUtils.isEmpty(user.getPwd())) {
+        if (StringUtils.isEmpty(user.getName()) || StringUtils.isEmpty(user.getPassword())) {
             mav.addObject("message", "用户名或密码不能为空！");
             return mav;
         }
@@ -89,7 +89,7 @@ public class UserController {
             mav.addObject("result", result);
             return mav; //返回页面
         }
-        if (StringUtils.isEmpty(user.getLoginId()) || StringUtils.isEmpty(user.getPwd())) {
+        if (StringUtils.isEmpty(user.getId()) || StringUtils.isEmpty(user.getPassword())) {
             responseObj = new ResponseObj<User>();
             responseObj.setCode(ResponseObj.FAILED);
             responseObj.setMsg("用户名或密码不能为空");
@@ -106,7 +106,7 @@ public class UserController {
             responseObj.setMsg("未找到该用户");
             result = GsonUtils.gson.toJson(responseObj);
         } else {
-            if (user.getPwd().equals(user1.getPwd())) {
+            if (user.getPassword().equals(user1.getPassword())) {
                 responseObj = new ResponseObj<User>();
                 responseObj.setCode(ResponseObj.OK);
                 responseObj.setMsg(ResponseObj.OK_STR);

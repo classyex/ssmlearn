@@ -14,10 +14,11 @@ public class MainController {
 
     /**
      * 登陆页面
+     *
      * @return go to login page
      */
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public String login(){
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
         return "login";
     }
 

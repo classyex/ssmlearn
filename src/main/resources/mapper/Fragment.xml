@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指定我们的到具体的bean -->
+<mapper namespace="com.github.classyex.web.dao.FragmentDao">
+
+   <insert id="insert">
+       INSERT INTO fragment(id, user_id, content, createTime) VALUES (#{id}, #{user.id}, #{content}, #{createTime})
+   </insert>
+
+</mapper>

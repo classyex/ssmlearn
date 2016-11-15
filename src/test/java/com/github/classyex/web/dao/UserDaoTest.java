@@ -21,10 +21,10 @@ public class UserDaoTest extends BaseTest {
     @Test
     public void testAdd() {
         User user = new User();
-        user.setLoginId("pc147852362");
+        user.setId("pc147852362");
         user.setName("雨下一整夜");
-        user.setPwd("123456");
-        user.setSex("未知");
+        user.setPassword("123456");
+        user.setSex(0);
         int result = 0; //受影响的行数默认为0
         try {
             result = userDao.add(user);
@@ -42,10 +42,10 @@ public class UserDaoTest extends BaseTest {
     @Test
     public void testFindOneId() throws Exception {
         User user = new User();
-        user.setLoginId("pc147852369");
+        user.setId("pc147852369");
         User result = null; //受影响的行数默认为0
         try {
-            result = userDao.findOneById(user.getLoginId());
+            result = userDao.findOneById(user.getId());
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("查找用户失败");
@@ -57,7 +57,7 @@ public class UserDaoTest extends BaseTest {
     @Test
     public void testDel() {
         User user = new User();
-        user.setLoginId("pc147852369");
+        user.setId("pc147852369");
         int result = 0; //受影响的行数默认为0
         try {
             result = userDao.del(user);
@@ -72,10 +72,10 @@ public class UserDaoTest extends BaseTest {
     @Test
     public void testUpdate() {
         User user = new User();
-        user.setLoginId("pc147852369");
+        user.setId("pc147852369");
         user.setName("手把手教程");
-        user.setPwd("123456");
-        user.setSex("男");
+        user.setPassword("123456");
+        user.setSex(1);
         int result = 0; //受影响的行数默认为0
         try {
             result = userDao.update(user);

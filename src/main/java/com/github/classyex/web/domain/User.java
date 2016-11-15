@@ -6,15 +6,32 @@ package com.github.classyex.web.domain;
  */
 public class User {
 
-    private String name;    //名字
-    private String sex; //性别
-    private String loginId; //登陆ID
-    private String pwd;    //密码
-    private String duty;    //职务
-    private int age;    //年龄
-    private String cellNumber;  //手机号
-    private String photoUrl;    //头像地址
-    private boolean used = true;   //是否可用,默认值是true
+    private String id;
+    private String name;
+    private String password;
+    private Integer sex;
+
+    public User() {
+    }
+
+    public User(String id) {
+        this.id = id;
+    }
+
+    public User(String id, String name, String password, Integer sex) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.sex = sex;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -24,67 +41,29 @@ public class User {
         this.name = name;
     }
 
-    public String getSex() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
-    public String getLoginId() {
-        return loginId;
-    }
-
-    public void setLoginId(String loginId) {
-        this.loginId = loginId;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    public String getDuty() {
-        return duty;
-    }
-
-    public void setDuty(String duty) {
-        this.duty = duty;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getCellNumber() {
-        return cellNumber;
-    }
-
-    public void setCellNumber(String cellNumber) {
-        this.cellNumber = cellNumber;
-    }
-
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
-
-    public boolean isUsed() {
-        return used;
-    }
-
-    public void setUsed(boolean used) {
-        this.used = used;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", sex=" + sex +
+                '}';
     }
 }
