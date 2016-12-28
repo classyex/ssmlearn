@@ -5,6 +5,7 @@ import com.github.classyex.web.service.UserService;
 import com.github.classyex.web.util.GsonUtils;
 import com.github.classyex.web.util.ResponseObj;
 import com.google.gson.Gson;
+import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * 用户登录处理
@@ -120,6 +122,19 @@ public class UserController {
         }
         mav.addObject("result", result);
         return mav;
+    }
+
+    @RequestMapping("json")
+    @ResponseBody
+    public Map<String, Object> json(){
+        Map<String, Object> resutl = new HashedMap();
+        resutl.put("可是", "sda尅的");
+        return resutl;
+    }
+
+    @RequestMapping("index")
+    public String index(){
+        return "index";
     }
 
 }
